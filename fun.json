@@ -4,18 +4,21 @@
    "key": "精品资源站",
    "name": "精品 | 采集",
    "type": 1,
-   "api": "https://www.jingpinx.com/api.php/provide/vod/",
-   "ext": "proxy"
+   "api": "https://cms-proxy1.gumson.workers.dev/c01",
+   "ext": "proxy",
+   "_orig_api": "https://www.jingpinx.com/api.php/provide/vod/"
   },
   {
    "key": "souav",
    "name": "souav | 采集",
    "type": 1,
-   "api": "https://api.souavzy.vip/api.php/provide/vod/?ac=list",
-   "playUrl": "https://jiexi.souavzyw.top/m3u8/?url=",
+   "api": "https://cms-proxy1.gumson.workers.dev/c02",
+   "playUrl": "https://cms-proxy1.gumson.workers.dev/p01?url=",
    "searchable": 1,
    "quickSearch": 1,
-   "filterable": 1
+   "filterable": 1,
+   "_orig_api": "https://api.souavzy.vip/api.php/provide/vod/?ac=list",
+   "_orig_playUrl": "https://jiexi.souavzyw.top/m3u8/?url="
   },
   {
    "key": "py_porn",
@@ -565,39 +568,43 @@
    "key": "AV资源",
    "name": "AV | 采集",
    "type": 1,
-   "api": "https://api.souavzy.vip/api.php/provide/vod/at/json",
+   "api": "https://cms-proxy1.gumson.workers.dev/c03",
    "searchable": 1,
    "style": {
     "type": "rect",
     "ratio": 1.33
    },
-   "changeable": 1
+   "changeable": 1,
+   "_orig_api": "https://api.souavzy.vip/api.php/provide/vod/at/json"
   },
   {
    "key": "大奶子",
    "name": "大奶子 | 采集",
    "type": 1,
-   "api": "https://apidanaizi.com/api.php/provide/vod",
+   "api": "https://cms-proxy1.gumson.workers.dev/c04",
    "searchable": 1,
    "style": {
     "type": "rect",
     "ratio": 1.33
    },
-   "changeable": 1
+   "changeable": 1,
+   "_orig_api": "https://apidanaizi.com/api.php/provide/vod"
   },
   {
    "key": "色猫",
    "name": "色猫 | 采集",
    "type": 1,
-   "api": "https://caiji.semaozy.net/inc/apijson_vod.php",
-   "ext": "proxy"
+   "api": "https://cms-proxy1.gumson.workers.dev/c05",
+   "ext": "proxy",
+   "_orig_api": "https://caiji.semaozy.net/inc/apijson_vod.php"
   },
   {
    "key": "沙鱼",
    "name": "沙鱼 | 采集",
    "type": 1,
-   "api": "https://shayuapi.com/api.php/provide/vod/",
-   "ext": "proxy"
+   "api": "https://cms-proxy1.gumson.workers.dev/c06",
+   "ext": "proxy",
+   "_orig_api": "https://shayuapi.com/api.php/provide/vod/"
   },
   {
    "key": "TGYunPan18pan",
@@ -691,11 +698,12 @@
    "key": "麻豆视频",
    "name": "麻豆 | 采集",
    "type": 1,
-   "api": "https://91md.me/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c07",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://91md.me/api.php/provide/vod/"
   },
   {
    "key": "淫水机资源站",
@@ -782,11 +790,12 @@
    "key": "奥斯卡",
    "name": "奥斯卡 | 采集",
    "type": 1,
-   "api": "https://aosikazy.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c08",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://aosikazy.com/api.php/provide/vod/"
   },
   {
    "key": "白嫖",
@@ -813,21 +822,23 @@
    "key": "番号",
    "name": "番号 | 采集",
    "type": 1,
-   "api": "http://fhapi9.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c09",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 0,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "http://fhapi9.com/api.php/provide/vod/"
   },
   {
    "key": "鲨鱼",
    "name": "鲨鱼 | 采集",
    "type": 1,
-   "api": "https://shayuapi.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c10",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://shayuapi.com/api.php/provide/vod/"
   },
   {
    "key": "美少女",
@@ -851,12 +862,13 @@
    "key": "辣椒",
    "name": "辣椒 | 采集",
    "type": 1,
-   "api": "https://apilj.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c11",
    "playUrl": "",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://apilj.com/api.php/provide/vod/"
   },
   {
    "key": "黄AV资源站",
@@ -871,106 +883,117 @@
    "key": "奶香香",
    "name": "奶香 | 采集",
    "type": 1,
-   "api": "https://naixxzy.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c12",
    "quickSearch": 1,
    "searchable": 1,
    "changeable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://naixxzy.com/api.php/provide/vod/"
   },
   {
    "key": "155资源站",
    "name": "155 | 采集",
    "type": 1,
-   "api": "https://155api.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c13",
    "quickSearch": 1,
    "searchable": 1,
    "changeable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://155api.com/api.php/provide/vod/"
   },
   {
    "key": "鸡坤",
    "name": "鸡坤 | 采集",
    "type": 1,
-   "api": "https://jkunzyapi.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c14",
    "quickSearch": 1,
    "searchable": 1,
    "changeable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://jkunzyapi.com/api.php/provide/vod/"
   },
   {
    "key": "乐播",
    "name": "乐播 | 采集",
    "type": 1,
-   "api": "https://lbapi9.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c15",
    "quickSearch": 1,
    "searchable": 1,
    "changeable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://lbapi9.com/api.php/provide/vod/"
   },
   {
    "key": "滴滴",
    "name": "滴滴 | 采集",
    "type": 1,
-   "api": "https://api.ddapi.cc/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c16",
    "quickSearch": 1,
    "searchable": 1,
    "changeable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://api.ddapi.cc/api.php/provide/vod/"
   },
   {
    "key": "玉兔",
    "name": "玉兔 | 采集",
    "type": 1,
-   "api": "https://apiyutu.com/api.php/provide/vod/",
-   "playUrl": "https://yutujx.com/?url=",
+   "api": "https://cms-proxy1.gumson.workers.dev/c17",
+   "playUrl": "https://cms-proxy1.gumson.workers.dev/p02?url=",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://apiyutu.com/api.php/provide/vod/",
+   "_orig_playUrl": "https://yutujx.com/?url="
   },
   {
    "key": "森林专场",
    "name": "森林 | 采集",
    "type": 1,
-   "api": "https://slapibf.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c18",
    "playUrl": "",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://slapibf.com/api.php/provide/vod/"
   },
   {
    "key": "芒果专场",
    "name": "芒果 | 采集",
    "type": 1,
-   "api": "https://mgzyz1.com/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c19",
    "playUrl": "",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://mgzyz1.com/api.php/provide/vod/"
   },
   {
    "key": "火速",
    "name": "火速 | 采集",
    "type": 1,
-   "api": "https://api.huosuapi.cc/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c20",
    "playUrl": "",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://api.huosuapi.cc/api.php/provide/vod/"
   },
   {
    "key": "嘿嘿场",
    "name": "嘿嘿 | 采集",
    "type": 1,
-   "api": "https://api.heiapi.cc/api.php/provide/vod/",
+   "api": "https://cms-proxy1.gumson.workers.dev/c21",
    "playUrl": "",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
-   "ext": "proxy"
+   "ext": "proxy",
+   "_orig_api": "https://api.heiapi.cc/api.php/provide/vod/"
   }
  ],
  "lives": [
