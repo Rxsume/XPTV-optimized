@@ -1,0 +1,13 @@
+{
+  "sites": [
+    {
+      "key": "user_huangguo_51chigua_gh",
+      "name": "黄果+51吃瓜（GitHub版）",
+      "type": 3,
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/Rxsume/XPTV-optimized/main/hg/cg/huangguo_51chigua.yingxia.t3.gh.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ]
+}
