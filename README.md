@@ -7,6 +7,10 @@
 
 - `index.optimized.js` — 优化后的 dist/index.js（2,380,597 字节，md5 `59644fcf18d50e5792aac2145f6b12d2`）
 - `OPTIMIZE.md` — 全部改动的说明、实测记录和部署步骤
+- `AUDIT.md` — js/py 全量核查报告（2026-11-12）
+- `fun.json` — 修好的备用 TVBox 配置（82 站，见下）
+- `py/` — 23 个已验证的 py 爬虫备份
+- `js/` — 48 个已验证的 js 爬虫备份（上游原样）
 
 ## 改了什么（摘要）
 
@@ -32,5 +36,6 @@
 
 ## 备用
 
-- 备用配置（TVBox sites 配置，87 个站，39KB）：`https://clun.top/fun.json`
-- 本仓库里也存了一份同样的 `fun.json`，clun.top 打不开时直接用仓库里的这份。
+- 备用配置（TVBox sites 配置）：`https://clun.top/fun.json`
+- 本仓库里的 `fun.json` 是**修好版**（82 站）：原配置 87 站，修了 3 个写错的 py 路径（`./py/18.py`、`./py/district.py`、`./py/jable.py` 实际在 `./js/ss/`），删了 5 个已死链的站（fish2018/lib 仓库已整个删除：色播、lav、xhm、pornhub、推特）。详见 [AUDIT.md](AUDIT.md)。
+- `py/`、`js/` 是已验证的爬虫备份，clun.top 或上游挂了时可直接用仓库里的。
