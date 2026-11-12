@@ -38,4 +38,5 @@
 
 - 备用配置（TVBox sites 配置）：`https://clun.top/fun.json`
 - 本仓库里的 `fun.json` 是**修好版**（82 站）：原配置 87 站，修了 3 个写错的 py 路径（`./py/18.py`、`./py/district.py`、`./py/jable.py` 实际在 `./js/ss/`），删了 5 个已死链的站（fish2018/lib 仓库已整个删除：色播、lav、xhm、pornhub、推特）。详见 [AUDIT.md](AUDIT.md)。
+- `fun.original.json` 是你发来的原版（87 站，未改动，md5 `3e704821bec1a331ce5c3bc4cccfceb4`），留作备份。
 - `py/`、`js/` 是已验证的爬虫备份，clun.top 或上游挂了时可直接用仓库里的。
