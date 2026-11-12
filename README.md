@@ -9,8 +9,9 @@
 - `OPTIMIZE.md` — 全部改动的说明、实测记录和部署步骤
 - `AUDIT.md` — js/py 全量核查报告（2026-11-12）
 - `fun.json` — 清理后的备用 TVBox 配置（72 站，见下）
-- `py/` — 23 个已验证的 py 爬虫备份
-- `js/` — 49 个已验证的 js 爬虫备份（48 个上游 + xp天堂.js）
+- `py/` — Hanime.py（`fun.json` 里 `./py/Hanime.py` 引用它）
+- `js/` — 48 个已验证的 js 爬虫备份（上游原样）
+- `js/ss/` — 23 个 clun.top 爬虫备份（22 个 py + xp天堂.js），供 `fun.json` 的 `./js/ss/` 相对路径解析
 
 ## 改了什么（摘要）
 

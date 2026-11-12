@@ -77,7 +77,14 @@ supjav.com、surrit.com、video.beeg.com、www.czzymovie.com、www.tianyiso.com�
 - 最可能的原因：你服务器那边的网络/分流。51cg1.com 这类站大概率要走 VPN，走了 DIRECT（被墙）或挂掉的节点就会这样。
 - 自查：在跑 XPTV 服务器的机器上 `curl -I https://51cg1.com/`，再检查分流里 51cg1.com 走哪个组。
 
-## 5. 上游 index.js 是否变了（用户 17:40 发来 index.js.md5）
+## 5. 相对路径 404 的根因（用户 17:47 截图：黄豆短剧[py] HTTP 404）
+
+`fun.json` 是按 clun.top 的目录结构写的相对路径（`./js/ss/*.py`、`./pg.jar`、`./img/pg.gif`、`./lib/*.m3u`），
+但仓库里一开始没有这些目录，播放器从 jsDelivr 加载 `fun.json` 后再按相对路径去取爬虫，自然 404。
+已按下面方式修好（`fun.json` 当前 md5 `3d45a01e3200b104c13107c45a2078f7`）：
+- 爬虫脚本：仓库新增 `js/ss/`（22 个 py + `xp天堂.js`），`py/Hanime.py` 保留原位，相对路径现在能解析。
+- `spider`（`./pg.jar`，4.7MB 二进制）与 `logo`（`./img/pg.gif`，二进制）改成绝对地址 `https://clun.top/pg.jar`、`https://clun.top/img/pg.gif`（二进制走不了连接器推送）。
+- 直播 `lives`：40 条里 9 条是相对路径，其中 2 条已死（`./lib/deyzb.m3u`、`./lib/rwcr.m3u` 在 clun.top 上返回的是首页错误页），已删掉（大洋马直播、台湾成人）；其余 7 条改成绝对地址 `https://clun.top/lib/*.m3u`（7 个文件共约 20MB，超过单次推送上限，改用绝对地址最稳）。现在 `lives` 38 条。
 
 用户发来的 `index.js.md5` 是 `e36ded5f5b448379c265b97d5d65264e`，和上游当前 `dist/index.js.md5` 一致，
 上游 `dist/index.js` 仍是 2,379,104 字节，**没有更新**，优化版（`index.optimized.js`，md5 `59644fcf18d50e5792aac2145f6b12d2`）仍是最新，不用重做。
@@ -85,8 +92,9 @@ supjav.com、surrit.com、video.beeg.com、www.czzymovie.com、www.tianyiso.com�
 ## 本仓库内容
 
 - `index.optimized.js`：优化版 dist/index.js（见 OPTIMIZE.md）
-- `fun.json`：清理后的备用 TVBox 配置（72 站）
+- `fun.json`：清理后的备用 TVBox 配置（72 站，38 条直播；md5 `3d45a01e3200b104c13107c45a2078f7`）
 - `fun.original.json`：用户发来的原版 fun.json（87 站，未改动）
-- `py/`：23 个已验证的 py 爬虫备份
-- `js/`：49 个已验证的 js 爬虫备份（48 个上游 + xp天堂.js，上游原样，未改）
+- `py/`：Hanime.py（`fun.json` 里 `./py/Hanime.py` 引用它）
+- `js/`：48 个上游 XPTV 爬虫备份（上游原样，未改）
+- `js/ss/`：23 个 clun.top 爬虫备份（22 个 py + xp天堂.js），供 `fun.json` 的 `./js/ss/` 相对路径解析
 - `AUDIT.md`：本报告

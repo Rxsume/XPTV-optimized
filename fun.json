@@ -975,57 +975,45 @@
  ],
  "lives": [
   {
-   "name": "大洋马直播",
-   "type": 0,
-   "url": "./lib/deyzb.m3u",
-   "ua": ""
-  },
-  {
    "name": "大秀直播",
    "type": 0,
-   "url": "./lib/dxzb.m3u",
+   "url": "https://clun.top/lib/dxzb.m3u",
    "ua": ""
   },
   {
    "name": "欧美直播",
    "type": 0,
-   "url": "./lib/omzb.m3u",
+   "url": "https://clun.top/lib/omzb.m3u",
    "ua": ""
   },
   {
    "name": "国产系列",
    "type": 0,
-   "url": "./lib/hsck_gc.m3u",
+   "url": "https://clun.top/lib/hsck_gc.m3u",
    "ua": ""
   },
   {
    "name": "日韩系列",
    "type": 0,
-   "url": "./lib/hsck_rh.m3u",
+   "url": "https://clun.top/lib/hsck_rh.m3u",
    "ua": ""
   },
   {
    "name": "色播聚合",
    "type": 0,
-   "url": "./lib/sbjh.m3u",
+   "url": "https://clun.top/lib/sbjh.m3u",
    "ua": ""
   },
   {
    "name": "麻豆视频",
    "type": 0,
-   "url": "./lib/mdsp.m3u",
-   "ua": ""
-  },
-  {
-   "name": "台湾成人",
-   "type": 0,
-   "url": "./lib/rwcr.m3u",
+   "url": "https://clun.top/lib/mdsp.m3u",
    "ua": ""
   },
   {
    "name": "test",
    "type": 0,
-   "url": "./lib/party.m3u",
+   "url": "https://clun.top/lib/party.m3u",
    "ua": ""
   },
   {
@@ -1562,6 +1550,6 @@
   "mgtv",
   "wasu"
  ],
- "spider": "./pg.jar",
- "logo": "./img/pg.gif"
+ "spider": "https://clun.top/pg.jar",
+ "logo": "https://clun.top/img/pg.gif"
 }
