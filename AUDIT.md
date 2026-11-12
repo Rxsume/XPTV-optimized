@@ -1,11 +1,13 @@
-# 检查报告（2026-11-12）：XPTV js/py 全量核查
+# 检查报告（2026-11-12）：XPTV js/py/CMS 全量核查
 
 核查范围：上游 fangkuia/XPTV 的 `js/` 爬虫脚本（48 个）、备用配置 `fun.json` 引用的 py 爬虫（27 个）、
-以及 51 吃瓜 ECONNREFUSED 的原因。结论：js 全部语法通过；py 有 7 处坏链，已修复；51 吃瓜是用户侧网络问题，不是代码问题。
+`fun.json` 里 39 个 CMS 采集接口，以及 51 吃瓜 ECONNREFUSED 的原因。
+结论：js 全部语法通过；py 有 7 处坏链已处理；CMS 接口 9 个死链（10 个站）已删；51 吃瓜是用户侧网络问题，不是代码问题。
+`fun.json` 最终 72 站。
 
 ## 1. js 爬虫（48 个，全部 syntax OK）
 
-`node --check` 全部通过。48 个文件已备份到本仓库 `js/`。
+`node --check` 全部通过。48 个文件已备份到本仓库 `js/`，另加 clun.top 的 `xp天堂.js`（15,504 字节，验证通过），共 49 个。
 
 上游可达性（从本机测，2026-11-12 17:40 左右，本机走 egress 代理，仅供参考——你服务器的网络不同，结果可能不一样）：
 69 个不重复上游域名中：33 个返回 200；19 个连接失败（000）；13 个返回 403；3 个 404；1 个 405。
@@ -26,7 +28,7 @@ supjav.com、surrit.com、video.beeg.com、www.czzymovie.com、www.tianyiso.com�
 
 ## 2. py 爬虫（fun.json 引用 27 个）
 
-20 个正常（下载到且 `python -m py_compile` 通过），已备份到本仓库 `py/`。
+20 个正常（下载到且 `python -m py_compile` 通过），已备份到本仓库 `py/`（共 23 个，含下面修好的 3 个）。
 
 ### 修好的 3 个（路径写错了）
 
@@ -46,21 +48,45 @@ supjav.com、surrit.com、video.beeg.com、www.czzymovie.com、www.tianyiso.com�
 - `pornhub`（py_Phb.py）
 - `推特`（py_推特.py）
 
-`fun.json` 由 87 个站减到 82 个站，修完后所有 py 引用都指向已验证的文件。
 注意：`fun.json` 最初下载时，clun.top 对默认 Python 爬虫 UA 返回 403，必须带浏览器 UA 才能拿到——
 如果你的播放器也拿不到 py 文件，检查它的请求头。
 
-## 3. 51 吃瓜 ECONNREFUSED（用户手机截图）
+## 3. CMS 采集接口（fun.json 里 39 个，36 个不重复地址）
+
+每个接口都实测 2 次（带浏览器 UA）。27 个返回 200 且是有效 CMS JSON/XML，正常。
+下面 9 个地址（10 个站）每次都失败，找不到可用的替代地址，已从 `fun.json` 里删掉：
+
+| 站 | 接口 | 现象 |
+|---|---|---|
+| AIvin | http://lbapiby.com/api.php/provide/vod/at/xml | 502 ×2 |
+| 色猫（第 2 个） | https://api.maozyapi.com/inc/apijson_vod.php | 523 ×2（源站不可达） |
+| 松视开通3、性爱 | https://api.sexnguon.com/api.php/provide/vod/ | 连接直接被断开 ×2 |
+| *抖阴视频 | https://www.888dav.com/api.php/provide/vod/ | 连接直接被断开 ×2 |
+| zp066 | https://api.apilyzy.com/api.php/provide/vod/at/xml/ | 连接直接被断开 ×2 |
+| 易看 | https://api.yikanapi.com/api.php/provide/vod/ | 连接直接被断开 ×2 |
+| 奶茶 | https://caiji.naichaapi.com/inc/api.php | 连接直接被断开 ×2 |
+| 探探 | https://apittzy.com/api.php/provide/vod/ | 连接直接被断开 ×2 |
+| 523专场 | https://523zyw.me/inc/apijson_vod.php | 连接直接被断开 ×2 |
+
+`fun.json` 的 csp 内置站（csp_GM、csp_JavBus 等 16 个）没有 URL 可测，播放器内部解析，全部保留。
+
+## 4. 51 吃瓜 ECONNREFUSED（用户手机截图）
 
 - 爬虫 key 是 `chigua`（51吃瓜），上游 `https://51cg1.com`，在我这边测是 HTTP 200，站没挂。
 - 报错是服务器去抓上游时 TCP 层直接被拒（ECONNREFUSED），还没走到列表解析，**不是优化版代码的问题，原版一样**。
 - 最可能的原因：你服务器那边的网络/分流。51cg1.com 这类站大概率要走 VPN，走了 DIRECT（被墙）或挂掉的节点就会这样。
 - 自查：在跑 XPTV 服务器的机器上 `curl -I https://51cg1.com/`，再检查分流里 51cg1.com 走哪个组。
 
+## 5. 上游 index.js 是否变了（用户 17:40 发来 index.js.md5）
+
+用户发来的 `index.js.md5` 是 `e36ded5f5b448379c265b97d5d65264e`，和上游当前 `dist/index.js.md5` 一致，
+上游 `dist/index.js` 仍是 2,379,104 字节，**没有更新**，优化版（`index.optimized.js`，md5 `59644fcf18d50e5792aac2145f6b12d2`）仍是最新，不用重做。
+
 ## 本仓库内容
 
 - `index.optimized.js`：优化版 dist/index.js（见 OPTIMIZE.md）
-- `fun.json`：修好的备用 TVBox 配置（82 站）
-- `py/`：26 个已验证的 py 爬虫备份
-- `js/`：48 个已验证的 js 爬虫备份（上游原样，未改）
+- `fun.json`：清理后的备用 TVBox 配置（72 站）
+- `fun.original.json`：用户发来的原版 fun.json（87 站，未改动）
+- `py/`：23 个已验证的 py 爬虫备份
+- `js/`：49 个已验证的 js 爬虫备份（48 个上游 + xp天堂.js，上游原样，未改）
 - `AUDIT.md`：本报告
