@@ -1,0 +1,26 @@
+name: Mirror SillyGirl images to ghcr.io
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Mirror sillygirl
+        run: |
+          docker pull smallfawn/sillygirl:latest
+          docker tag smallfawn/sillygirl:latest ghcr.io/rxsume/sillygirl:latest
+          docker push ghcr.io/rxsume/sillygirl:latest
+      - name: Mirror napcat
+        run: |
+          docker pull mlikiowa/napcat-docker:latest
+          docker tag mlikiowa/napcat-docker:latest ghcr.io/rxsume/napcat-docker:latest
+          docker push ghcr.io/rxsume/napcat-docker:latest
