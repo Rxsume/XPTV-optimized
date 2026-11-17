@@ -21,6 +21,6 @@ jobs:
           docker push ghcr.io/rxsume/sillygirl:latest
       - name: Mirror napcat
         run: |
-          docker pull mlikiowa/napcat-docker:latest
-          docker tag mlikiowa/napcat-docker:latest ghcr.io/rxsume/napcat-docker:latest
+          docker pull lmq8267/napcat:latest
+          docker tag lmq8267/napcat:latest ghcr.io/rxsume/napcat-docker:latest
           docker push ghcr.io/rxsume/napcat-docker:latest
