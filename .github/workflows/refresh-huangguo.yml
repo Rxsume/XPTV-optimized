@@ -1,11 +1,11 @@
 name: 刷新黄果+51吃瓜数据
 
-# 每小时整点跑生成器，把新鲜数据 JSON 推回本仓库。
+# 每小时 37 分跑生成器，把新鲜数据 JSON 推回本仓库。
 # 推送用仓库自带的 GITHUB_TOKEN，不经过 Muse，不需要人工点审批。
 # 生成器在 hg/scripts/，输出 hg/cg/huangguo_51chigua_gh.json（加密包裹，供映匣 T3 用）。
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '37 * * * *'
   workflow_dispatch:
 
 permissions:
